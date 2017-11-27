@@ -15,7 +15,7 @@ public class Success extends AppCompatActivity {
 
         TextView book;
         book = (TextView)this.findViewById(R.id.textView6);
-        book.setText(databaseStuff.getSeller().toString());
+        book.setText(databaseStuff.getSellerTestMethod().toString());
 
     }
 }

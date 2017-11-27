@@ -89,9 +89,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
 
         queue.add(registerRequest);
-
-
-
     }
 }
 }
