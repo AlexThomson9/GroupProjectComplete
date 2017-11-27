@@ -54,52 +54,53 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final String username = etName.getText().toString();
         final String password = etPassword.getText().toString();
 
-        Response.Listener<String> responseListener = new Response.Listener<String>() {
-            @Override
-            public void onResponse(String Response) {
-                try {
 
-
-                    JSONObject jsonResponse = new JSONObject(Response);
-                    boolean success = jsonResponse.getBoolean("success");
-
-                    if (success){
-                        String name = jsonResponse.getString("name");
-
-                        Intent in = new Intent(MainActivity.this , HomeActivity.class);
-                        in.putExtra("name", name);
-                        in.putExtra("username", name);
-                        startActivity(in);
-
-                    }
-                    else
-                    {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                        builder.setMessage("LoginFailed")
-                                .setNegativeButton("Retry", null)
-                                .create()
-                                .show();
-
-
-                    }
-                }catch (JSONException e){
-
-
-                    e.printStackTrace();
-                }
-
-
-
-
-            }
-        };
-
-        LoginRequest loginRequest = new LoginRequest(username, password, responseListener);
-        RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
-        queue.add(loginRequest);
 
         if(v.getId() == R.id.button7){
 
+            Response.Listener<String> responseListener = new Response.Listener<String>() {
+                @Override
+                public void onResponse(String Response) {
+                    try {
+
+
+                        JSONObject jsonResponse = new JSONObject(Response);
+                        boolean success = jsonResponse.getBoolean("success");
+
+                        if (success){
+                            String name = jsonResponse.getString("name");
+
+                            Intent in = new Intent(MainActivity.this , HomeActivity.class);
+                            in.putExtra("name", name);
+                            in.putExtra("username", name);
+                            startActivity(in);
+
+                        }
+                        else
+                        {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                            builder.setMessage("LoginFailed")
+                                    .setNegativeButton("Retry", null)
+                                    .create()
+                                    .show();
+
+
+                        }
+                    }catch (JSONException e){
+
+
+                        e.printStackTrace();
+                    }
+
+
+
+
+                }
+            };
+
+            LoginRequest loginRequest = new LoginRequest(username, password, responseListener);
+            RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
+            queue.add(loginRequest);
 
 
         }else if (v.getId() == R.id.button8){
