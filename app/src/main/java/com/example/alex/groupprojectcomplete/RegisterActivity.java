@@ -45,14 +45,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             meme = new Intent(RegisterActivity.this, HomeActivity.class);
             startActivity(meme);*/
 
-        Response.Listener<String> responseListener =
-                new Response.Listener<String>(){
+        Response.Listener<String> responseListener = new Response.Listener<String>(){
 
 
-                    public void onResponse(String response){
+                    public void onResponse(String Response){
                         try {
 
-                            JSONObject jsonResponse = new JSONObject(response);
+                            //response = "{\"response\":}";
+                            JSONObject jsonResponse = new JSONObject(Response);
 
 
                             boolean success = jsonResponse.getBoolean("success");
