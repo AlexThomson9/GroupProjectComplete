@@ -11,13 +11,14 @@
         android:layout_width="190dp"
         android:layout_height="65dp"
         android:layout_alignParentTop="true"
-        android:layout_toStartOf="@+id/button5"
+        android:layout_toStartOf="@+id/sell_button"
         android:text="Buy"
         tools:layout_editor_absoluteX="192dp"
-        tools:layout_editor_absoluteY="1dp" />
+        tools:layout_editor_absoluteY="1dp"
+        android:layout_alignBottom="@+id/sell_button" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/sell_button"
         android:layout_width="190dp"
         android:layout_height="65dp"
         android:text="Sell"

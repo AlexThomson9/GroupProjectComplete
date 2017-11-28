@@ -22,6 +22,9 @@ public class BuySearch extends AppCompatActivity implements View.OnClickListener
         Search = (Button)this.findViewById(R.id.button6);
         Search.setOnClickListener(this);
 
+        Button sell_button = (Button)this.findViewById(R.id.sell_button);
+        sell_button.setOnClickListener(this);
+
     }
 
 public static String ModuleNumber;
@@ -43,25 +46,21 @@ public static String BookName;
 
             if(ModuleNo.getText().toString() == null){
 
-
-
-
-
-
-
             }else if (B_name.getText().toString() == null){
-
-
-
 
             }
 
-
-
             Intent in;
             startActivity(in = new Intent(BuySearch.this, BuyResults.class));
+
             //memes.setText(databaseStuff.getTextbook().toString());
+        } else if(v.getId() == R.id.sell_button){
+            Intent in;
+            startActivity(in = new Intent(BuySearch.this, SellBook.class));
         }
+
+
+
 
 
 

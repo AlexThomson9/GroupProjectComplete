@@ -10,14 +10,20 @@ import android.widget.EditText;
 
 public class SellBook extends AppCompatActivity implements View.OnClickListener{
     DatabaseUtility databaseStuff;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sell_book);
         databaseStuff = new DatabaseUtility(this);
         Button Update;
-        Update = (Button)this.findViewById(R.id.button3);
+        Update = (Button)this.findViewById(R.id.sell);
         Update.setOnClickListener(this);
+
+        Button BuyButton = (Button)this.findViewById(R.id.buy_button);
+        BuyButton.setOnClickListener(this);
+
+
 
     }
 
@@ -31,9 +37,14 @@ public class SellBook extends AppCompatActivity implements View.OnClickListener{
         EditText BookNo, Cond, price;
 
 
+
+
+
         BookNo = (EditText)this.findViewById(R.id.bookNo);
         Cond = (EditText)this.findViewById(R.id.Condit);
-        price = (EditText)this.findViewById(R.id.pricee);
+        price = (EditText)this.findViewById(R.id.price);
+
+
 
 
         String BookID = BookNo.getText().toString();
@@ -56,17 +67,18 @@ public class SellBook extends AppCompatActivity implements View.OnClickListener{
 
         databaseStuff.myDB.insert("Selling", null, sellbook);
 
-        if(v.getId() == R.id.button3){
+        if(v.getId() == R.id.sell){
 
             Intent go;
 
             startActivity(go = new Intent(SellBook.this, Success.class));
 
+        } else if(v.getId() == R.id.buy_button){
 
-
+            Intent go;
+            go = new Intent(this, BuySearch.class);
+            startActivity(go);
         }
-
-
 
     }
 }

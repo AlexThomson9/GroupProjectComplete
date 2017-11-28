@@ -35,7 +35,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-         etName = (EditText)this.findViewById(R.id.etPassword);
+
+
+        etName = (EditText)this.findViewById(R.id.etPassword);
         etPassword = (EditText)this.findViewById(R.id.etPassword);
 
         final Button login_button = (Button)this.findViewById(R.id.button7);
@@ -43,11 +45,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 register_button.setOnClickListener(this);
                 login_button.setOnClickListener(this);
-
-
-
-       //
-
     }
 
     @Override
@@ -102,16 +99,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent go = new Intent(MainActivity.this, HomeActivity.class);
             startActivity(go);
 
-
-
         }
-
-
-
-
-
-
-
-
     }
 }
