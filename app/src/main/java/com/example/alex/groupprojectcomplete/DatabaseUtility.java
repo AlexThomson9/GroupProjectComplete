@@ -39,10 +39,14 @@ public class DatabaseUtility
             {
                 textbookviaModule.add(cursor.getString(1));
                 textbookviaModule.add(cursor.getString(2));
-                textbookviaModule.add(cursor.getString(7));
+                textbookviaModule.add(cursor.getString(4));
+                textbookviaModule.add(cursor.getString(5));
+                textbookviaModule.add(cursor.getString(6));
             }
             cursor.close();
         return (ArrayList<String>)textbookviaModule;
+
+
     }
 
     //This method is used in conjunction with the validate method to return the correct search results from searching via
@@ -64,7 +68,9 @@ public class DatabaseUtility
             {
                 textbookviaName.add(cursor.getString(1));
                 textbookviaName.add(cursor.getString(2));
-                textbookviaName.add(cursor.getString(7));
+                textbookviaName.add(cursor.getString(4));
+                textbookviaName.add(cursor.getString(5));
+                textbookviaName.add(cursor.getString(6));
             }
             cursor.close();
         return (ArrayList<String>)textbookviaName;
@@ -240,7 +246,7 @@ public class DatabaseUtility
     {
         List<String> link = new ArrayList<String>();
         Cursor cur = null;
-        String sql = "SELECT name, module , link FROM BookInfo CROSS JOIN Selling WHERE ISBN =  '" + BookNumber + "'";
+        String sql = "SELECT name, module, Selling.link FROM BookInfo CROSS JOIN Selling WHERE BookInfo.ISBN = '" + BookNumber + "'";
             try
             {
                 cur = myDB.rawQuery(sql, null);
@@ -253,9 +259,11 @@ public class DatabaseUtility
             {
                 link.add(cur.getString(0));
                 link.add(cur.getString(1));
-                link.add(cur.getString(3));
+                link.add(cur.getString(2));
             }
         return (ArrayList<String>)link;
+
     }
+
 
 }
