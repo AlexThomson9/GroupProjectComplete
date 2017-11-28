@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,12 +36,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
          etName = (EditText)this.findViewById(R.id.etPassword);
-        etPassword= (EditText)this.findViewById(R.id.etPassword);
+        etPassword = (EditText)this.findViewById(R.id.etPassword);
 
         final Button login_button = (Button)this.findViewById(R.id.button7);
         final Button register_button = (Button)this.findViewById(R.id.button8);
 
                 register_button.setOnClickListener(this);
+                login_button.setOnClickListener(this);
 
 
 
@@ -62,33 +64,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 @Override
                 public void onResponse(String Response) {
                     try {
-
-
                         JSONObject jsonResponse = new JSONObject(Response);
                         boolean success = jsonResponse.getBoolean("success");
-
-                        if (success){
-                            String name = jsonResponse.getString("name");
-
-                            Intent in = new Intent(MainActivity.this , HomeActivity.class);
-                            in.putExtra("name", name);
-                            in.putExtra("username", name);
+                       // jsonResponse.getJSONArray();
+                        if(success){
+                           // String name = jsonResponse.getString("name");
+                            Intent in = new Intent(MainActivity.this, HomeActivity.class);
+                        //    in.putExtra("name", name);
+                         //   in.putExtra("username", username);
                             startActivity(in);
-
                         }
                         else
                         {
                             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                            builder.setMessage("LoginFailed")
-                                    .setNegativeButton("Retry", null)
-                                    .create()
-                                    .show();
-
-
+                            builder.setMessage("LoginFailed").setNegativeButton("Retry", null).create().show();
                         }
                     }catch (JSONException e){
-
-
                         e.printStackTrace();
                     }
 
@@ -97,7 +88,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 }
             };
-
             LoginRequest loginRequest = new LoginRequest(username, password, responseListener);
             RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
             queue.add(loginRequest);
@@ -107,6 +97,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             Intent in = new Intent(MainActivity.this, RegisterActivity.class);
             startActivity(in);
+        }else if (v.getId() == R.id.button10){
+
+            Intent go = new Intent(MainActivity.this, HomeActivity.class);
+            startActivity(go);
+
+
+
         }
 
 
