@@ -85,7 +85,7 @@
             tools:layout_constraintLeft_creator="1" />
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/c2Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -259,7 +259,7 @@
         tools:layout_constraintRight_creator="1">
 
         <TextView
-            android:id="@+id/c1PriceTitle"
+            android:id="@+id/c3PriceTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="27dp"
@@ -270,7 +270,7 @@
             tools:layout_constraintRight_creator="1" />
 
         <TextView
-            android:id="@+id/textView16"
+            android:id="@+id/textView20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="27dp"
@@ -278,56 +278,56 @@
             android:layout_marginTop="10dp"
             android:text="TextView"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/c1PriceTitle"
+            app:layout_constraintTop_toBottomOf="@+id/c3PriceTitle"
             tools:layout_constraintRight_creator="1"
             tools:layout_constraintTop_creator="1" />
 
         <TextView
-            android:id="@+id/c1Condition"
+            android:id="@+id/c3Condition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
             app:layout_constraintBottom_toBottomOf="@+id/imageButton6"
-            app:layout_constraintLeft_toLeftOf="@+id/c1ConditionTitle"
-            app:layout_constraintRight_toRightOf="@+id/c1ConditionTitle"
+            app:layout_constraintLeft_toLeftOf="@+id/c3ConditionTitle"
+            app:layout_constraintRight_toRightOf="@+id/c3ConditionTitle"
             tools:layout_constraintBottom_creator="1"
             tools:layout_constraintLeft_creator="1"
             tools:layout_constraintRight_creator="1" />
 
         <TextView
-            android:id="@+id/c1ConditionTitle"
+            android:id="@+id/c3ConditionTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
-            app:layout_constraintBottom_toTopOf="@+id/c1Condition"
-            app:layout_constraintLeft_toLeftOf="@+id/c1Title"
-            app:layout_constraintRight_toRightOf="@+id/c1Title"
+            app:layout_constraintBottom_toTopOf="@+id/c3Condition"
+            app:layout_constraintLeft_toLeftOf="@+id/c3Title"
+            app:layout_constraintRight_toRightOf="@+id/c3Title"
             tools:layout_constraintBottom_creator="1"
             tools:layout_constraintLeft_creator="1"
             tools:layout_constraintRight_creator="1" />
 
         <TextView
-            android:id="@+id/c1Title"
+            android:id="@+id/c3Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="34dp"
             android:layout_marginLeft="30dp"
             android:layout_marginStart="30dp"
             android:text="TextView"
-            app:layout_constraintBottom_toTopOf="@+id/c1ConditionTitle"
+            app:layout_constraintBottom_toTopOf="@+id/c3ConditionTitle"
             app:layout_constraintLeft_toRightOf="@+id/imageButton6"
             tools:layout_constraintBottom_creator="1"
             tools:layout_constraintLeft_creator="1" />
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/textView21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="TextView"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="@+id/c1Title"
-            app:layout_constraintRight_toRightOf="@+id/c1Title"
+            app:layout_constraintLeft_toLeftOf="@+id/c3Title"
+            app:layout_constraintRight_toRightOf="@+id/c2Title"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_constraintLeft_creator="1"
             tools:layout_constraintRight_creator="1" />
