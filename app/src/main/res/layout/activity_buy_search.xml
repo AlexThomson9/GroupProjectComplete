@@ -7,10 +7,12 @@
     tools:context="com.example.alex.groupprojectcomplete.BuySearch">
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/buy_button"
         android:layout_width="190dp"
         android:layout_height="65dp"
-        android:text="Button"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/button5"
+        android:text="Buy"
         tools:layout_editor_absoluteX="192dp"
         tools:layout_editor_absoluteY="1dp" />
 
@@ -18,7 +20,7 @@
         android:id="@+id/button5"
         android:layout_width="190dp"
         android:layout_height="65dp"
-        android:text="Button"
+        android:text="Sell"
         tools:layout_editor_absoluteX="2dp"
         tools:layout_editor_absoluteY="1dp"
         android:layout_alignParentTop="true"
@@ -29,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/editText"
-        android:layout_below="@+id/button4"
+        android:layout_below="@+id/buy_button"
         android:layout_marginTop="51dp"
         android:text="Search Via Module No" />
 
