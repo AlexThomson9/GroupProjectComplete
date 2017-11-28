@@ -66,11 +66,14 @@ public class BuyResults extends AppCompatActivity implements View.OnClickListene
                     Log.d("guess", memes);
                     Result1.setVisibility(View.VISIBLE);
 
-                    C_Title.setText("Module Number");
-                    P_Title.setText("Link to Purchaser");
-                    Title.setText(databaseStuff.getLink().get(0).toString());
-                    Condition.setText(databaseStuff.getLink().get(1).toString());
-                    Price.setText(databaseStuff.getLink().get(2).toString());
+                    String Mn = "Module Number";
+                    String LtR = "Link to Retailer";
+                    C_Title.setText(Mn);
+                    P_Title.setText(LtR);
+                    Title.setText(databaseStuff.getLink().get(0));
+                    Condition.setText(databaseStuff.getLink().get(1));
+
+                    Price.setText(databaseStuff.getLink().get(2));
 
                 }
 
