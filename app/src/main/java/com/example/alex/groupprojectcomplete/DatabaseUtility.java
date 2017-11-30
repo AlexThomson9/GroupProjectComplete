@@ -45,8 +45,6 @@ public class DatabaseUtility
             }
             cursor.close();
         return (ArrayList<String>)textbookviaModule;
-
-
     }
 
     //This method is used in conjunction with the validate method to return the correct search results from searching via
@@ -257,13 +255,108 @@ public class DatabaseUtility
             }
             while(cur.moveToNext())
             {
+                link.clear();
                 link.add(cur.getString(0));
                 link.add(cur.getString(1));
                 link.add(cur.getString(2));
             }
         return (ArrayList<String>)link;
-
     }
 
+    public ArrayList<String> getSellers()
+    {
+        List<String> sellers = new ArrayList<String>();
+        Cursor cur = null;
+        int user_ID = 0;
+        String sql = "SELECT ISBN, condition, price FROM Selling WHERE uID = '" + user_ID + "'";
+        try
+        {
+            cur = myDB.rawQuery(sql, null);
+        }
+        catch(SQLException e)
+        {
+            e.printStackTrace();
+        }
+        while(cur.moveToNext())
+        {
+        }
+        return (ArrayList<String>)sellers;
+    }
+    public ArrayList<String> getTextbookviaModuleTest()
+    {
+        List<String> textbooktest = new ArrayList<String>();
+        Cursor cursor = null;
+        String userID = validate().get(0);
+        String countQuery = "SELECT name, module, Selling.link FROM " + DB_NAME + " INNER JOIN Selling ON Selling.ISBN = BookInfo.ISBN WHERE module = '"+ BuySearch.ModuleNumber + "' ";
+        String countQuery2 = "SELECT name, module, Selling.link FROM " + DB_NAME + " INNER JOIN Selling ON Selling.ISBN = BookInfo.ISBN WHERE name = '"+ BuySearch.BookName + "'";
+        String test;
+        try
+        {
 
+            if(BuySearch.ModuleNumber.length() != 0){
+                cursor = myDB.rawQuery(countQuery, null);
+
+
+            }else if(BuySearch.BookName.length() != 0){
+
+                cursor = myDB.rawQuery(countQuery2, null);
+
+            }
+
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        if(cursor.moveToFirst())
+        {
+            while(!cursor.isAfterLast())
+            {
+               // textbooktest.clear();
+                textbooktest.add(cursor.getString(cursor.getColumnIndex("name")));
+                textbooktest.add(cursor.getString(cursor.getColumnIndex("module")));
+                textbooktest.add(cursor.getString(cursor.getColumnIndex("link")));
+                cursor.moveToNext();
+            }
+            cursor.close();
+        }
+        return (ArrayList<String>)textbooktest;
+    }
+    public ArrayList<String> getSellingInfoTest()
+    {
+        List<String> seller = new ArrayList<String>();
+        Cursor get = null;
+        String userID = validate().get(0);
+       //String sql = "SELECT name, Selling.Condition, Selling.price FROM BookInfo INNER JOIN Selling ON Selling.ISBN = BookInfo.ISBN WHERE uID = '" + userID + "'";
+        String sql = "SELECT name, Selling.Condition, Selling.price FROM BookInfo INNER JOIN Selling ON Selling.ISBN = BookInfo.ISBN WHERE uID IS NOT NULL AND BookInfo.Module = '" + BuySearch.ModuleNumber + "'";
+        String sq2 = "SELECT name, Selling.Condition, Selling.price FROM BookInfo INNER JOIN Selling ON Selling.ISBN = BookInfo.ISBN WHERE uID IS NOT NULL AND BookInfo.name = '" + BuySearch.BookName + "'";
+        try
+        {
+            if(BuySearch.ModuleNumber.length() != 0){
+
+                get = myDB.rawQuery(sql, null);
+
+            }else if(BuySearch.BookName.length() != 0){
+
+                get = myDB.rawQuery(sq2, null);
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        if(get.moveToFirst())
+        {
+            while(!get.isAfterLast())
+            {
+                // textbooktest.clear();
+                seller.add(get.getString(get.getColumnIndex("name")));
+                seller.add(get.getString(get.getColumnIndex("Condition")));
+                seller.add(get.getString(get.getColumnIndex("price")));
+                get.moveToNext();
+            }
+            get.close();
+        }
+        return (ArrayList<String>)seller;
+    }
 }

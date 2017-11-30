@@ -65,9 +65,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         boolean success = jsonResponse.getBoolean("success");
                        // jsonResponse.getJSONArray();
                         if(success){
-                           // String name = jsonResponse.getString("name");
+                            int user_id = jsonResponse.getInt("user_id");
                             Intent in = new Intent(MainActivity.this, HomeActivity.class);
-                        //    in.putExtra("name", name);
+                            in.putExtra("user_id", user_id);
                          //   in.putExtra("username", username);
                             startActivity(in);
                         }

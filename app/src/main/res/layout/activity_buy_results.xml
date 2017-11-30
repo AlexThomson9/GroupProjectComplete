@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="@+id/imageButton6"
+            app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
             app:layout_constraintLeft_toLeftOf="@+id/c2ConditionTitle"
             app:layout_constraintRight_toRightOf="@+id/c2ConditionTitle"
             tools:layout_constraintBottom_creator="1"
@@ -80,7 +80,7 @@
             android:layout_marginStart="30dp"
             android:text="TextView"
             app:layout_constraintBottom_toTopOf="@+id/c2ConditionTitle"
-            app:layout_constraintLeft_toRightOf="@+id/imageButton6"
+            app:layout_constraintLeft_toRightOf="@+id/imageButton2"
             tools:layout_constraintBottom_creator="1"
             tools:layout_constraintLeft_creator="1" />
 
@@ -98,7 +98,7 @@
             tools:layout_constraintRight_creator="1" />
 
         <ImageButton
-            android:id="@+id/imageButton6"
+            android:id="@+id/imageButton2"
             android:layout_width="107dp"
             android:layout_height="104dp"
             android:layout_marginLeft="16dp"
@@ -170,7 +170,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="@+id/imageButton6"
+            app:layout_constraintBottom_toBottomOf="@+id/imageButton1"
             app:layout_constraintLeft_toLeftOf="@+id/c1ConditionTitle"
             app:layout_constraintRight_toRightOf="@+id/c1ConditionTitle"
             tools:layout_constraintBottom_creator="1"
@@ -198,7 +198,7 @@
             android:layout_marginStart="30dp"
             android:text="TextView"
             app:layout_constraintBottom_toTopOf="@+id/c1ConditionTitle"
-            app:layout_constraintLeft_toRightOf="@+id/imageButton6"
+            app:layout_constraintLeft_toRightOf="@+id/imageButton1"
             tools:layout_constraintBottom_creator="1"
             tools:layout_constraintLeft_creator="1" />
 
@@ -216,7 +216,7 @@
             tools:layout_constraintRight_creator="1" />
 
         <ImageButton
-            android:id="@+id/imageButton6"
+            android:id="@+id/imageButton1"
             android:layout_width="107dp"
             android:layout_height="104dp"
             android:layout_marginLeft="16dp"
@@ -287,7 +287,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="@+id/imageButton6"
+            app:layout_constraintBottom_toBottomOf="@+id/imageButton3"
             app:layout_constraintLeft_toLeftOf="@+id/c3ConditionTitle"
             app:layout_constraintRight_toRightOf="@+id/c3ConditionTitle"
             tools:layout_constraintBottom_creator="1"
@@ -315,7 +315,7 @@
             android:layout_marginStart="30dp"
             android:text="TextView"
             app:layout_constraintBottom_toTopOf="@+id/c3ConditionTitle"
-            app:layout_constraintLeft_toRightOf="@+id/imageButton6"
+            app:layout_constraintLeft_toRightOf="@+id/imageButton3"
             tools:layout_constraintBottom_creator="1"
             tools:layout_constraintLeft_creator="1" />
 
@@ -333,7 +333,7 @@
             tools:layout_constraintRight_creator="1" />
 
         <ImageButton
-            android:id="@+id/imageButton6"
+            android:id="@+id/imageButton3"
             android:layout_width="107dp"
             android:layout_height="104dp"
             android:layout_marginLeft="16dp"

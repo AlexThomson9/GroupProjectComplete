@@ -30,65 +30,75 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
-        final EditText etName = (EditText)this.findViewById(R.id.etName);
-        final EditText etPassword= (EditText)this.findViewById(R.id.etPassword);
-        final EditText etUsername = (EditText)this.findViewById(R.id.etUsername);
+        final EditText etName = (EditText) this.findViewById(R.id.etName);
+        final EditText etPassword = (EditText) this.findViewById(R.id.etPassword);
+        final EditText etUsername = (EditText) this.findViewById(R.id.etUsername);
+        final EditText etEmail = (EditText)this.findViewById(R.id.etEmail);
 
 
         final String name = etName.getText().toString();
         final String username = etUsername.getText().toString();
         final String password = etPassword.getText().toString();
+        final String email = etEmail.getText().toString();
 
 
-        if (v.getId() == R.id.button9){
+
+        if(!email.contains(".ac.uk") && !email.contains("@")){
+            AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+            builder.setMessage("email must be academic").setNegativeButton("Please Retry", null).create().show();
+        }
+
+
+        if (v.getId() == R.id.button9) {
          /*   Intent meme;
             meme = new Intent(RegisterActivity.this, HomeActivity.class);
             startActivity(meme);*/
 
-        Response.Listener<String> responseListener = new Response.Listener<String>(){
+            Response.Listener<String> responseListener = new Response.Listener<String>() {
 
 
-                    public void onResponse(String Response){
-                        try {
+                public void onResponse(String Response) {
+                    try {
 
-                            //response = "{\"response\":}";
-                            JSONObject jsonResponse = new JSONObject(Response);
-
-
-                            boolean success = jsonResponse.getBoolean("success");
-
-                            if(success){
-                                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-                                RegisterActivity.this.startActivity(intent);
-
-                            }else {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-                                builder.setMessage("Register Failed").setNegativeButton("Retry",null).create().show();
+                        //response = "{\"response\":}";
+                        JSONObject jsonResponse = new JSONObject(Response);
 
 
+                        boolean success = jsonResponse.getBoolean("success");
 
-                            }
+                        if (success) {
+                            Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                            RegisterActivity.this.startActivity(intent);
+
+                        } else {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                            builder.setMessage("Register Failed").setNegativeButton("Retry", null).create().show();
 
 
-                        }catch (JSONException e){
-
-
-                            e.printStackTrace();
                         }
 
 
+                    } catch (JSONException e) {
+
+
+                        e.printStackTrace();
                     }
 
 
-                };
+                }
 
 
-                RegisterRequest registerRequest = new RegisterRequest(name, username, password, responseListener);
-
-        RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
+            };
 
 
-        queue.add(registerRequest);
-    }
+            RegisterRequest registerRequest = new RegisterRequest(name, username, password, email, responseListener);
+
+            RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
+
+
+            queue.add(registerRequest);
+        }
+
+    //}
 }
 }

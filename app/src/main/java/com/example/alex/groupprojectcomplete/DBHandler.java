@@ -31,7 +31,6 @@ public class DBHandler extends SQLiteOpenHelper {
 
 
     public void onConfigure(SQLiteDatabase myDB) {
-
         myDB.setForeignKeyConstraintsEnabled(true);
     }
 
@@ -48,7 +47,7 @@ public class DBHandler extends SQLiteOpenHelper {
                 "(ISBN INTEGER NOT NULL, name TEXT, module TEXT, PRIMARY KEY(name , module));";
         sq2 = "CREATE TABLE " + TB_NAME + "(uID INTEGER , ISBN INTEGER NOT NULL" +
                 ", Condition TEXT ," +
-                " price INT , link TEXT ,PRIMARY KEY(uID, ISBN)); ";
+                " price INT , link TEXT); ";
         myDB.execSQL(sql);
             TbInfo = new ContentValues();
             TbInfo.put("ISBN", "123443");
@@ -109,6 +108,21 @@ public class DBHandler extends SQLiteOpenHelper {
         stock.put("ISBN", "375345");
         stock.put("link", "HTTP://www.geoguessr.co.uk");
         myDB.insert(TB_NAME, null, stock);
+
+
+
+        //these are test values for selling a book, cba to keep manualy inputting them
+        stock.put("uID", 16);
+        stock.put("ISBN", "123443");
+        stock.put("Condition", "Nae bad");
+        stock.put("price", 25);
+        myDB.insert(TB_NAME, null, stock);
+        stock.put("uID", 20);
+        stock.put("ISBN", "123443");
+        stock.put("Condition", "Great");
+        stock.put("price", 22);
+        myDB.insert(TB_NAME, null, stock);
+
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

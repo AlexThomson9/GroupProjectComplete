@@ -2,6 +2,7 @@ package com.example.alex.groupprojectcomplete;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,33 +28,16 @@ public class SellBook extends AppCompatActivity implements View.OnClickListener{
 
     }
 
-    public static String ISBN;
-    public static String Condition;
-    public static int Price;
-
     @Override
     public void onClick(View v) {
 
         EditText BookNo, Cond, price;
-
-
-
-
-
         BookNo = (EditText)this.findViewById(R.id.bookNo);
         Cond = (EditText)this.findViewById(R.id.Condit);
         price = (EditText)this.findViewById(R.id.price);
-
-
-
-
         String BookID = BookNo.getText().toString();
         String Condit = Cond.getText().toString();
         int Cost = price.getText().length();
-
-        ISBN = BookID;
-        Condition = Condit;
-        Price = Cost;
 
 
 
@@ -61,17 +45,15 @@ public class SellBook extends AppCompatActivity implements View.OnClickListener{
 
         ContentValues sellbook = new ContentValues();
         sellbook.put("uID", 3);
-        sellbook.put("ISBN",ISBN);
-        sellbook.put("Condition",Condition);
-        sellbook.put("Price",Price);
+        sellbook.put("ISBN",BookID);
+        sellbook.put("Condition",Condit);
+        sellbook.put("Price",Cost);
 
         databaseStuff.myDB.insert("Selling", null, sellbook);
 
         if(v.getId() == R.id.sell){
-
-            Intent go;
-
-            startActivity(go = new Intent(SellBook.this, Success.class));
+            AlertDialog.Builder builder = new AlertDialog.Builder(SellBook.this);
+            builder.setMessage("Listed Successfully").setNegativeButton("close", null).create().show();
 
         } else if(v.getId() == R.id.buy_button){
 
