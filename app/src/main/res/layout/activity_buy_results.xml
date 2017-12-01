@@ -348,9 +348,12 @@
         android:id="@+id/textView19"
         android:layout_width="212dp"
         android:layout_height="31dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteY="6dp"
+        android:layout_marginTop="44dp"
+        android:text="Results..."
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:textSize="24sp"
+        app:layout_constraintHorizontal_bias="0.093" />
 
 </android.support.constraint.ConstraintLayout>

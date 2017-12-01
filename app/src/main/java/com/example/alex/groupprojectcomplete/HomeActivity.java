@@ -10,6 +10,7 @@ import android.widget.TextView;
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener{
 
     DatabaseUtility databaseStuff;
+    String uId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +23,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         Button b2 = (Button)this.findViewById(R.id.button2);
         b2.setOnClickListener(this);
+
+        uId = getIntent().getStringExtra("user_id");
         //
 
     }

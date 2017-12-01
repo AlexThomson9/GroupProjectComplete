@@ -24,7 +24,8 @@
         <activity android:name=".Success" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".BuyBookPage"></activity>
+        <activity android:name=".BuyBookPage" />
+        <activity android:name=".MyBooks"></activity>
     </application>
 
 </manifest>

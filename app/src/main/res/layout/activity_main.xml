@@ -53,6 +53,7 @@
         android:layout_below="@+id/etUsername"
         android:layout_marginTop="30dp"
         android:ems="10"
+        android:hint="Password"
         android:inputType="textPassword" />
 
 </RelativeLayout>
