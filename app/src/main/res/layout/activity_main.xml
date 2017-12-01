@@ -17,35 +17,25 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/etUsername"
-        android:layout_below="@+id/etUsername"
-        android:layout_marginTop="26dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPersonName" />
-
     <Button
         android:id="@+id/button7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:text="Login"
+        android:layout_marginTop="47dp"
         android:layout_below="@+id/etPassword"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="147dp"
-        android:text="Login" />
+        android:layout_alignStart="@+id/etPassword"
+        android:layout_marginStart="50dp" />
 
     <Button
         android:id="@+id/button8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/button7"
-        android:layout_marginEnd="51dp"
-        android:text="Register" />
+        android:text="Register"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_below="@+id/button7"
+        android:layout_alignStart="@+id/button7"
+        android:layout_marginTop="15dp" />
 
     <Button
         android:id="@+id/button10"
@@ -54,5 +44,15 @@
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/etUsername"
         android:text="Button" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/etUsername"
+        android:layout_below="@+id/etUsername"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:inputType="textPassword" />
 
 </RelativeLayout>

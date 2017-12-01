@@ -8,22 +8,25 @@
 
     <Button
         android:id="@+id/buy_button"
-        android:layout_width="190dp"
+        android:layout_width="150dp"
         android:layout_height="65dp"
-        android:layout_alignParentTop="true"
-        android:layout_toStartOf="@+id/sell_button"
         android:text="Buy"
         tools:layout_editor_absoluteX="192dp"
         tools:layout_editor_absoluteY="1dp"
-        android:layout_alignBottom="@+id/sell_button" />
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/sell_button"
+        android:layout_marginEnd="11dp"
+        android:background="@android:color/black"
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/sell_button"
-        android:layout_width="190dp"
+        android:layout_width="150dp"
         android:layout_height="65dp"
         android:text="Sell"
         tools:layout_editor_absoluteX="2dp"
         tools:layout_editor_absoluteY="1dp"
+        android:layout_marginEnd="29dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
 
