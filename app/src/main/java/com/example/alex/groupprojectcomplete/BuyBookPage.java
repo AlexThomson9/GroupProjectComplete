@@ -24,7 +24,9 @@ public class BuyBookPage extends AppCompatActivity {
 
     private static PayPalConfiguration config = new PayPalConfiguration()
             .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX)
-            .clientId("");
+            .clientId("Acz4oQwktlKMEtRsGlgf8aEiGJMJ6mRKcZiUl9LSwmPL0KUG4d3CH6nWzo2bs3t_YVmd1lIP_vHKFE06");
+
+    String getPrice, getTitle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,9 +35,9 @@ public class BuyBookPage extends AppCompatActivity {
         final Button button = (Button) findViewById(R.id.button3);
 
         String ResNo = getIntent().getStringExtra("ResultNo");
-        String getTitle = getIntent().getStringExtra("Title");
+        getTitle = getIntent().getStringExtra("Title");
         String getCondition = getIntent().getStringExtra("Condition");
-        String getPrice = getIntent().getStringExtra("Price");
+        getPrice = getIntent().getStringExtra("Price");
 
         TextView Title = (TextView)this.findViewById(R.id.RTtile);
         TextView Conditon = (TextView)this.findViewById(R.id.RCondition);
@@ -65,8 +67,8 @@ public class BuyBookPage extends AppCompatActivity {
         serviceConfig.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, config);
         startService(serviceConfig);
 
-        PayPalPayment payment = new PayPalPayment(new BigDecimal("5.65"),
-                "USD", "My Awesome Item", PayPalPayment.PAYMENT_INTENT_SALE);
+        PayPalPayment payment = new PayPalPayment(new BigDecimal(getPrice),
+                "GBP", "Book Title:" + getTitle, PayPalPayment.PAYMENT_INTENT_SALE);
 
         Intent paymentConfig = new Intent(this, PaymentActivity.class);
         paymentConfig.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, config);
