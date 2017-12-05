@@ -26,8 +26,7 @@ public class BuyResults extends AppCompatActivity implements View.OnClickListene
         ConstraintLayout Result1 = (ConstraintLayout) this.findViewById(R.id.Result1);
         ConstraintLayout Result2 = (ConstraintLayout) this.findViewById(R.id.Result2);
         ConstraintLayout Result3 = (ConstraintLayout) this.findViewById(R.id.Result3);
-        View line1 = (View) this.findViewById(R.id.view5);
-        View line2 = (View) this.findViewById(R.id.view7);
+
 
         ImageButton R_1 = (ImageButton) this.findViewById(R.id.imageButton1);
         ImageButton R_2 = (ImageButton) this.findViewById(R.id.imageButton2);
@@ -40,8 +39,7 @@ public class BuyResults extends AppCompatActivity implements View.OnClickListene
         Result1.setVisibility(View.INVISIBLE);
         Result2.setVisibility(View.INVISIBLE);
         Result3.setVisibility(View.INVISIBLE);
-        line1.setVisibility(View.INVISIBLE);
-        line2.setVisibility(View.INVISIBLE);
+
 
 
         R1_Title = (TextView) this.findViewById(R.id.c1Title);
