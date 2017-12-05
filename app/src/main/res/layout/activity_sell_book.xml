@@ -32,6 +32,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:text="Sell"
+        android:theme="@style/testbut"
+
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
         android:layout_marginEnd="1dp"

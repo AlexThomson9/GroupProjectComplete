@@ -109,24 +109,6 @@
             app:srcCompat="?android:attr/actionModeFindDrawable" />
     </android.support.constraint.ConstraintLayout>
 
-    <View
-        android:id="@+id/view7"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-
-
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="352dp"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1"
-        app:layout_constraintHorizontal_bias="0.156" />
-
     <android.support.constraint.ConstraintLayout
         android:id="@+id/Result1"
         android:layout_width="0dp"
@@ -226,23 +208,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="?android:attr/actionModeFindDrawable" />
     </android.support.constraint.ConstraintLayout>
-
-    <View
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-
-
-        android:id="@+id/view5"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="191dp"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/Result3"

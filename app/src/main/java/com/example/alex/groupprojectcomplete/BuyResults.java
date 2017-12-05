@@ -85,7 +85,7 @@ public class BuyResults extends AppCompatActivity implements View.OnClickListene
 
                     if (Tvm >= 6) {
                         Result2.setVisibility(View.VISIBLE);
-                        line1.setVisibility(View.VISIBLE);
+
                         R2_C_Title.setText(Mn);
                         R2_P_Title.setText(LtR);
                         R2_Title.setText(databaseStuff.getTextbookviaModuleTest().get(3));
@@ -93,7 +93,7 @@ public class BuyResults extends AppCompatActivity implements View.OnClickListene
                         R2_Price.setText(databaseStuff.getTextbookviaModuleTest().get(5));
                         if (Tvm >= 9) {
                             Result3.setVisibility(View.VISIBLE);
-                            line2.setVisibility(View.VISIBLE);
+
                             R3_C_Title.setText(Mn);
                             R3_P_Title.setText(LtR);
                             R3_Title.setText(databaseStuff.getTextbookviaModuleTest().get(6));
@@ -120,7 +120,7 @@ public class BuyResults extends AppCompatActivity implements View.OnClickListene
 
                     if (Tvm >= 6) {
                         Result2.setVisibility(View.VISIBLE);
-                        line1.setVisibility(View.VISIBLE);
+
                         R2_C_Title.setText(Mn);
                         R2_P_Title.setText(LtR);
                         R2_Title.setText(databaseStuff.getTextbookviaModuleTest().get(3));
@@ -128,7 +128,7 @@ public class BuyResults extends AppCompatActivity implements View.OnClickListene
                         R2_Price.setText(databaseStuff.getTextbookviaModuleTest().get(5));
                         if (Tvm >= 9) {
                             Result3.setVisibility(View.VISIBLE);
-                            line2.setVisibility(View.VISIBLE);
+
                             R3_C_Title.setText(Mn);
                             R3_P_Title.setText(LtR);
                             R3_Title.setText(databaseStuff.getTextbookviaModuleTest().get(6));
@@ -160,13 +160,13 @@ public class BuyResults extends AppCompatActivity implements View.OnClickListene
                     R1_Price.setText(databaseStuff.getSellingInfoTest().get(2));
                     if (lnk >= 6) {
                         Result2.setVisibility(View.VISIBLE);
-                        line1.setVisibility(View.VISIBLE);
+
                         R2_Title.setText(databaseStuff.getSellingInfoTest().get(3));
                         R2_Condition.setText(databaseStuff.getSellingInfoTest().get(4));
                         R2_Price.setText(databaseStuff.getSellingInfoTest().get(5));
                         if (lnk >= 9) {
                             Result3.setVisibility(View.VISIBLE);
-                            line2.setVisibility(View.VISIBLE);
+
                             R3_Title.setText(databaseStuff.getSellingInfoTest().get(6));
                             R3_Condition.setText(databaseStuff.getSellingInfoTest().get(7));
                             R3_Price.setText(databaseStuff.getSellingInfoTest().get(8));
@@ -181,13 +181,13 @@ public class BuyResults extends AppCompatActivity implements View.OnClickListene
                     R1_Price.setText(databaseStuff.getSellingInfoTest().get(2));
                     if (lnk >= 6) {
                         Result2.setVisibility(View.VISIBLE);
-                        line1.setVisibility(View.VISIBLE);
+
                         R2_Title.setText(databaseStuff.getSellingInfoTest().get(3));
                         R2_Condition.setText(databaseStuff.getSellingInfoTest().get(4));
                         R2_Price.setText(databaseStuff.getSellingInfoTest().get(5));
                         if (lnk >= 9) {
                             Result3.setVisibility(View.VISIBLE);
-                            line2.setVisibility(View.VISIBLE);
+
                             R3_Title.setText(databaseStuff.getSellingInfoTest().get(6));
                             R3_Condition.setText(databaseStuff.getSellingInfoTest().get(7));
                             R3_Price.setText(databaseStuff.getSellingInfoTest().get(8));

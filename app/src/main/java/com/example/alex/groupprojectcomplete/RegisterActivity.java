@@ -43,10 +43,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
 
 
-        if(!email.contains(".ac.uk") && !email.contains("@")){
-            AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-            builder.setMessage("email must be academic").setNegativeButton("Please Retry", null).create().show();
-        }
+
+
+
 
 
         if (v.getId() == R.id.button9) {
@@ -54,51 +53,60 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             meme = new Intent(RegisterActivity.this, HomeActivity.class);
             startActivity(meme);*/
 
-            Response.Listener<String> responseListener = new Response.Listener<String>() {
+
+            if (email.contains("ac.uk")) {
+
+                Response.Listener<String> responseListener = new Response.Listener<String>() {
 
 
-                public void onResponse(String Response) {
-                    try {
+                    public void onResponse(String Response) {
+                        try {
 
-                        //response = "{\"response\":}";
-                        JSONObject jsonResponse = new JSONObject(Response);
-
-
-                        boolean success = jsonResponse.getBoolean("success");
-
-                        if (success) {
-                            Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-                            RegisterActivity.this.startActivity(intent);
-
-                        } else {
-                            AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-                            builder.setMessage("Register Failed").setNegativeButton("Retry", null).create().show();
+                            //response = "{\"response\":}";
+                            JSONObject jsonResponse = new JSONObject(Response);
 
 
+                            boolean success = jsonResponse.getBoolean("success");
+
+                            if (success) {
+                                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                                RegisterActivity.this.startActivity(intent);
+
+                            } else {
+                                AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                                builder.setMessage("Register Failed").setNegativeButton("Retry", null).create().show();
+
+
+                            }
+
+
+                        } catch (JSONException e) {
+
+
+                            e.printStackTrace();
                         }
 
 
-                    } catch (JSONException e) {
-
-
-                        e.printStackTrace();
                     }
 
 
-                }
+                };
 
 
-            };
+                RegisterRequest registerRequest = new RegisterRequest(name, username, password, email, responseListener);
+
+                RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
 
 
-            RegisterRequest registerRequest = new RegisterRequest(name, username, password, email, responseListener);
-
-            RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
+                queue.add(registerRequest);
 
 
-            queue.add(registerRequest);
+            }  else{
+
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                builder.setMessage("email must be academic").setNegativeButton("Please Retry", null).create().show();
+            }
         }
-
-    //}
 }
 }

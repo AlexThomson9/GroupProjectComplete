@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.alex.groupprojectcomplete.BuySearch">
+    tools:context="com.example.alex.groupprojectcomplete.BuySearch"
+    android:theme="@style/testapp">
+
 
     <Button
         android:id="@+id/buy_button"
         android:layout_width="150dp"
         android:layout_height="65dp"
-        android:text="Buy"
         tools:layout_editor_absoluteX="192dp"
         tools:layout_editor_absoluteY="1dp"
         android:layout_alignParentTop="true"
         android:layout_toStartOf="@+id/sell_button"
         android:layout_marginEnd="11dp"
-        android:background="@android:color/black"
-        android:textColor="@android:color/white" />
+        android:theme="@style/testbut"/>
 
     <Button
         android:id="@+id/sell_button"
@@ -47,6 +47,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:ems="10"
+        android:theme="@style/testapp"
         android:inputType="textPersonName" />
 
     <EditText
@@ -66,6 +67,7 @@
         android:layout_alignBottom="@+id/editText2"
         android:layout_alignEnd="@+id/textView2"
         android:layout_marginBottom="55dp"
+
         android:text="Search Via Book Name" />
 
     <Button

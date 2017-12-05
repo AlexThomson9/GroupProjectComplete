@@ -3,8 +3,14 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="background_material_dark">#ef5350</color>
+    <color name="background_material_dark">#ceeae6</color>
     <color name="accent_material_dark">#64e1d6</color>
     <color name="primary_dark_material_dark">#7ad075</color>
-    <color name="button">#64e1d6</color>
+    <color name="button">#291b4f</color>
+    <color name="whiteee">#bfd7ea</color>
+    <color name="primary_text_material_light">#fcd42b</color>
+    <color name="themetest">#ceeae6</color>
+    <color name="colormeme">#ff5a5f</color>
+    <color name="colorbut">#0b3954</color>
+    <color name="textxx">#bfd7ea</color>
 </resources>

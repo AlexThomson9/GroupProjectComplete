@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final String password = etPassword.getText().toString();
 
 
-
         if(v.getId() == R.id.button7){
 
             Response.Listener<String> responseListener = new Response.Listener<String>() {
